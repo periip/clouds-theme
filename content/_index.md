@@ -1,9 +1,7 @@
-+++
-title = 'Home'
-date = 2023-01-01T08:00:00-07:00
-draft = false
-+++
++++ portraitImage = "/portrait.jpg"
 
-Laborum voluptate pariatur ex culpa magna nostrud est incididunt fugiat
-pariatur do dolor ipsum enim. Consequat tempor do dolor eu. Non id id anim anim
-excepteur excepteur pariatur nostrud qui irure ullamco.
+introTitle = "Introduce yourself here!" introBody = "Give the audience a little summary/introduction about what to expect in this ASCII, black and white, pixel focused theme."
+
+statusImage = "/status.png" statusText = "A way to let everyone know what you're up to..."
+
+watchingImage = "/watching.png" watchingText = "How to create a Hugo theme from scratch — Berkay Çubuk // HugoConf 2023" watchingUrl = "https://www.youtube.com/watch?v=0WJ2lWNhqm8" +++
