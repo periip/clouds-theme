@@ -1,5 +1,5 @@
 +++
-portraitImage = "/portrait.png"
+portraitImage = "/portrait.jpg"
 
 introTitle = "Introduce yourself here!"
 introBody = "Give the audience a little summary/introduction about what to expect in this ASCII, black and white, pixel focused theme."
