@@ -1,4 +1,16 @@
 {
+  "name": "hugo-clouds-theme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx @tailwindcss/cli -i assets/css/styles.css -o static/css/styles.css",
+    "watch": "npx @tailwindcss/cli -i assets/css/styles.css -o static/css/styles.css --watch"
+  },
+  "keywords": [],
+  "author": "periip",
+  "license": "ISC",
+  "type": "commonjs",
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.0",
     "postcss": "^8.5.14",
