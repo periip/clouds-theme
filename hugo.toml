@@ -4,9 +4,11 @@ title = 'Welcome to my clouds theme'
 
 [menus]
   [[menus.main]]
-    name = 'Home'
+    name = 'home'
     pageRef = '/'
-    weight = 10
+    weight = 1
+    [menus.main.params]
+      image = '/digigarden2025.png'
 
   [[menus.main]]
     name = 'Posts'
