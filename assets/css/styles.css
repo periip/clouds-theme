@@ -270,13 +270,9 @@ nav a:hover {
   color: #f9a8d4;
 }
 
-#theme-toggle {
-  cursor: pointer;
-  background: none;
-  border: none;
-  color: #ffffff;
-  font-size: 1rem;
-  padding: 0;
+.card {
+  @apply rounded-lg border-2 p-6 flex flex-col;
+  background-color: var(--overlay);
 }
 
 a.card:hover {
