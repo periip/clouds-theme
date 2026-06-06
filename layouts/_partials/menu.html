@@ -37,7 +37,7 @@ Renders a menu for the given menu ID.
         {{- end -}}
       >
         {{- if .Params.image }}
-          <img src="{{ .Params.image }}" alt="{{ $name }}">
+          <img src="{{ .Params.image }}" alt="{{ $name }}" class="w-8 h-auto">
         {{- else }}
           {{ $name }}
         {{- end }}
