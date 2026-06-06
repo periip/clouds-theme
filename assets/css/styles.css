@@ -278,3 +278,36 @@ nav a:hover {
 a.card:hover {
   border-color: var(--accent)
 }
+
+.timeline {
+  border-left: 2px solid var(--text);
+  padding-left: 2rem;
+  margin-top: 2rem;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: calc(-2rem - 6px);
+  top: calc(16px - 6px); /* Middle of h3 offset by half of circle + border width*/
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  border: 2px solid var(--text);
+}
+
+.timeline-item h3 {
+  margin: 0;
+}
+
+.timeline-item .role {
+  font-size: 12px;
+  opacity: 0.7;
+  margin-bottom: 0.5rem;
+}
