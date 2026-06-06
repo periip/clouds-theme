@@ -2,18 +2,46 @@
 @source "../../layouts/**/*.html";
 @source "../../content/**/*.html";
 
+:root {
+  --bg: #111111;
+  --text: #ffffff;
+  --accent: #B892FF;
+  --overlay: rgba(0,0,0,0.2)
+}
+
 html {
-  background-color: #111111;
+  background-image: url('/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
 }
 
 body {
-  color: #ffffff;
+    display: flex;
+  flex-direction: column;
+  position: relative;
+  color: var(--text);
   font-family: 'Fira Code', monospace;
   line-height: 2.0;
   margin: 0;
   max-width: none;
   font-size: 14px;
+  min-height: 100vh;
 }
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-color: var(--overlay);
+  z-index: -1;
+}
+
+main {
+  flex: 1
+}
+
 
 header {
   margin-bottom: 1rem;
@@ -24,13 +52,13 @@ footer {
 }
 
 a {
-  color: #ffffff;
+  color: var(--text);
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
 a:hover:not(.block):not(.not-prose) {
-  color: #f9a8d4;
+  color: var(--accent);
 }
 
 p a,
@@ -53,25 +81,29 @@ p {
   margin-bottom: 1rem;
 }
 
+p:last-child {
+  margin-bottom: 0;
+}
+
 blockquote {
-  border-left: 2px solid #ffffff;
+  border-left: 2px solid var(--text);
   padding-left: 1.5rem;
   margin-left: 0;
   margin-bottom: 1rem;
   font-style: italic;
-  color: #ffffff;
+  color: var(--text);
 }
 
 h1 {
   font-size: 28px;
   font-weight: bold;
-  color: #ffffff;
+  color: var(--text);
 }
 
 h2 {
   font-size: 18px;
   font-weight: bold;
-  color: #ffffff;
+  color: var(--text);
   margin-bottom: 0.5rem;
   margin-top: 0.5rem;
 }
@@ -86,7 +118,7 @@ h2 {
 h3 {
   font-size: 16px;
   font-weight: bold;
-  color: #ffffff;
+  color: var(--text);
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
@@ -94,7 +126,7 @@ h3 {
 h4 {
   font-size: 14px;
   font-weight: bold;
-  color: #ffffff;
+  color: var(--text);
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
@@ -102,7 +134,7 @@ h4 {
 h5 {
   font-size: 12px;
   font-weight: bold;
-  color: #ffffff;
+  color: var(--text);
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
@@ -110,7 +142,7 @@ h5 {
 h6 {
   font-size: 10px;
   font-weight: bold;
-  color: #ffffff;
+  color: var(--text);
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
@@ -156,6 +188,27 @@ input[type="checkbox"]:checked {
 input[type="email"] {
   color: #000000 !important;
   color: #000000;
+}
+
+nav ul {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0;
+}
+
+nav ul li {
+  display: flex;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 ul {
@@ -215,4 +268,17 @@ nav a {
 
 nav a:hover {
   color: #f9a8d4;
+}
+
+#theme-toggle {
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 0;
+}
+
+a.card:hover {
+  border-color: var(--accent)
 }
