@@ -1,5 +1,5 @@
 # Clouds Theme
-I like clouds so I made a Hugo theme around it
+I like clouds so I made a Hugo theme around it. Modified and customized version of [digio-theme](https://github.com/danapixels/digio-theme).
 
 # Getting Started
 First install Hugo Extended by following these [instructions](https://gohugo.io/installation/) 
