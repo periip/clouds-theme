@@ -15,11 +15,11 @@
 		</div>
 		<div class="card not-prose cursor-default space-y-2">
 			<img src="{{ or $p.listeningImage "/listening.png" }}" alt="Listening" class="self-start w-8 h-auto">
-			{{ if or $p.watchingUrl $p.watchingText }}
+			{{ if or $p.listeningUrl $p.listeningText }}
 				<p class="underline">
-					{{ if $p.watchingUrl }}<a href="{{ $p.watchingUrl }}">{{ end }}
-					{{ or $p.watchingText "" }}
-					{{ if $p.watchingUrl }}</a>{{ end }}
+					{{ if $p.listeningUrl }}<a href="{{ $p.listeningUrl }}">{{ end }}
+					{{ or $p.listeningText "" }}
+					{{ if $p.listeningUrl }}</a>{{ end }}
 				</p>
 			{{ end }}
 		</div>

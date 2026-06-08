@@ -1,5 +1,5 @@
 # Clouds Theme
-I like clouds so I made a Hugo theme around it. Modified and customized version of [digio-theme](https://github.com/danapixels/digio-theme).
+I like clouds so I made a Hugo theme around it. Modified and customized version of [digio-theme](https://github.com/danapixels/digio-theme) for a personal website.
 
 # Getting Started
 First install Hugo Extended by following these [instructions](https://gohugo.io/installation/) 
@@ -20,3 +20,8 @@ Start up Hugo by running
 # -D includes draft content to preview during development
 hugo server -D
 ```
+
+# Planned Features
+1. Add social media icons
+2. Fetch songs from youtube/spotify playlist
+3. Update "listening" card to be cooler

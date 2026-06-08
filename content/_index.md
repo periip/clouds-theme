@@ -11,6 +11,6 @@ statusImage = "/status.gif"
 statusText = "A way to let everyone know what you're up to..."
 
 listeningImage = "/listening.png"
-watchingText = "How to create a Hugo theme from scratch — Berkay Çubuk // HugoConf 2023"
-watchingUrl = "https://www.youtube.com/watch?v=0WJ2lWNhqm8"
+listeningText = "Bruno Mars - Locked out of Heaven"
+listeningUrl = "https://www.youtube.com/watch?v=e-fA-gBCkj0"
 +++
