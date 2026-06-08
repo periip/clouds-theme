@@ -20,11 +20,6 @@ title = 'Welcome to my clouds theme'
     pageRef = '/experience'
     weight = 3
 
-  [[menus.main]]
-    name = 'Tags'
-    pageRef = '/tags'
-    weight = 4
-
 [module]
   [module.hugoVersion]
     extended = false
