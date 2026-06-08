@@ -64,8 +64,8 @@
 								aria-label="{{ $post.LinkTitle }}"
 							>
 								<h3 class="font-semibold flex items-center gap-2">
-									{{ with $post.Params.listIcon }}<img src="{{ . }}" alt="" />
-									{{ end }} {{ $post.LinkTitle }}
+									<img src="/post.png" alt="post" class="post-icon" />
+									{{ $post.LinkTitle }}
 								</h3>
 
 								{{ with $post.Params.teaser }}
@@ -91,7 +91,7 @@
 								aria-label="{{ $link.title }}"
 							>
 								<h3 class="font-semibold flex items-center gap-2">
-									{{ with $link.icon }}<img src="{{ . }}" alt="" />{{ end }} {{ $link.title }}
+									{{ with $link.icon }}<img src="{{ . }}" alt="link" class="post-icon"/>{{ end }} {{ $link.title }}
 								</h3>
 
 								{{ with $link.teaser }}

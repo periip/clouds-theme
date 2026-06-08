@@ -10,11 +10,11 @@
 	</div>
 	<div class="grid lg:grid-rows-2 gap-4">
 		<div class="card not-prose cursor-default space-y-2">
-			<img src="{{ or $p.statusImage "/status.png" }}" alt="Status" class="self-start w-8 h-auto">
+			<img src="{{ or $p.statusImage "/status.png" }}" alt="Status" class="self-start w-8">
 			{{ with $p.statusText }}<div>{{ . | markdownify }}</div>{{ end }}
 		</div>
 		<div class="card not-prose cursor-default space-y-2">
-			<img src="{{ or $p.listeningImage "/listening.png" }}" alt="Listening" class="self-start w-8 h-auto">
+			<img src="{{ or $p.listeningImage "/listening.png" }}" alt="Listening" class="self-start w-8">
 			{{ if or $p.listeningUrl $p.listeningText }}
 				<p class="underline">
 					{{ if $p.listeningUrl }}<a href="{{ $p.listeningUrl }}">{{ end }}

@@ -34,31 +34,6 @@
 			{{ range $allItems }}
 				{{ if eq .type "post" }}
 					{{ $post := .data }}
-					{{/* determine icon from params (listIcon preferred), allow keyword or explicit path */}}
-					{{ $icon := "" }}
-					{{ with $post.Params.listIcon }}
-						{{ $val := . }}
-						{{ if or (eq $val "contribute") (eq $val "writing") }}
-							{{ if eq $val "contribute" }}{{ $icon = "/contribute.png" }}{{ end }}
-							{{ if eq $val "writing" }}{{ $icon = "/writing.png" }}{{ end }}
-						{{ else }}
-							{{ $icon = $val }}
-						{{ end }}
-					{{ else }}
-						{{ with $post.Params.icon }}
-							{{ $val := . }}
-							{{ if or (eq $val "contribute") (eq $val "writing") }}
-								{{ if eq $val "contribute" }}{{ $icon = "/contribute.png" }}{{ end }}
-								{{ if eq $val "writing" }}{{ $icon = "/writing.png" }}{{ end }}
-							{{ else }}
-								{{ $icon = $val }}
-							{{ end }}
-						{{ end }}
-					{{ end }}
-					{{ if eq $icon "" }}
-						{{ if in $post.Params.tags "open-source" }}{{ $icon = "/contribute.png" }}{{ end }}
-						{{ if in $post.Params.tags "write" }}{{ $icon = "/writing.png" }}{{ end }}
-					{{ end }}
 
 					{{/* teaser text preference */}}
 					{{ $teaser := $post.Params.teaser }}
@@ -69,7 +44,7 @@
 						<article class="not-prose flex cursor-pointer flex-col space-y-4 rounded-lg border border-transparent p-6 transition-all duration-150 hover:border-pink-300">
 							<h2 class="text-xl font-semibold">
 								<span class="text-white flex items-center">
-									{{ with $icon }}<img src="{{ . }}" alt="" class="mr-2">{{ end }}
+									<img src="{{ or $post.Params.listIcon "/post.png" }}" alt="" class="post-icon mr-2">
 									{{ $post.LinkTitle }}
 								</span>
 							</h2>
@@ -85,7 +60,7 @@
 						<article class="not-prose flex cursor-pointer flex-col space-y-4 rounded-lg border border-transparent p-6 transition-all duration-150 hover:border-pink-300">
 							<h2 class="text-xl font-semibold">
 								<span class="text-white flex items-center">
-									<img src="{{ $link.icon }}" alt="" class="mr-2">
+									<img src="{{ or $link.icon "/link.png" }}" alt="" class="post-icon mr-2">
 									{{ $link.title }}
 								</span>
 							</h2>
