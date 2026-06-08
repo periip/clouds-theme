@@ -1,0 +1,6 @@
+{
+  "[html]": {
+    "editor.defaultFormatter": "gohugoio.gotmplfmt",
+    "editor.formatOnSave": true
+  }
+}
