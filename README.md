@@ -24,4 +24,4 @@ hugo server -D
 # Planned Features
 1. Add social media icons
 2. Fetch songs from youtube/spotify playlist
-3. Update "listening" card to be cooler
+3. Update "listening" card to have a more fun/interactive UI
