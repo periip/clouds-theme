@@ -15,6 +15,7 @@ html {
   background-position: center;
   background-attachment: fixed;
   min-height: 100vh;
+  overflow-y: scroll
 }
 
 body {
@@ -155,6 +156,10 @@ hr {
   background: none;
 }
 
+.content-container {
+  @apply mx-auto w-full max-w-4xl px-4;
+}
+
 .toc-container {
   position: sticky;
   top: 2rem;
@@ -212,26 +217,13 @@ nav {
 }
 
 ul {
+  @apply pl-4;
   list-style: none;
-  padding-left: 1rem;
   margin-bottom: 1rem;
 }
 
 ul li {
-  position: relative;
-  padding-left: 1.25rem;
-}
-
-ul li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.7em;
-  width: 8px;
-  height: 8px;
-  background-image: url('/sparkle.png');
-  background-repeat: no-repeat;
-  background-size: contain;
+  @apply pl-2;
 }
 
 /* hides sparkle bullets for checkbox lists */
@@ -258,6 +250,10 @@ nav ul {
   padding-left: 0;
 }
 
+nav ul li {
+  @apply pl-5;
+}
+
 nav ul li::before {
   display: none;
 }
@@ -275,26 +271,29 @@ nav a:hover {
   background-color: var(--overlay);
 }
 
+.card-transition {
+  @apply block relative cursor-pointer space-y-4 transition-all duration-150 group
+}
+
 a.card:hover {
   border-color: var(--accent)
 }
 
 .timeline {
+  --timeline-padding: 1rem;
   border-left: 2px solid var(--text);
-  padding-left: 2rem;
-  margin-top: 2rem;
+  padding-left: var(--timeline-padding);
 }
 
 .timeline-item {
   position: relative;
-  margin-bottom: 2rem;
 }
 
 .timeline-item::before {
   content: "";
   position: absolute;
-  left: calc(-2rem - 6px);
-  top: calc(16px - 6px); /* Middle of h3 offset by half of circle + border width*/
+  left: calc(-1 * var(--timeline-padding) - 6px);
+  top: calc(20.6px + 1.5rem - 6px); /* Move downwards to middle of h2 (including margin) and offset by half of circle + border width*/
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -302,16 +301,22 @@ a.card:hover {
   border: 2px solid var(--text);
 }
 
-.timeline-item h3 {
+/* .timeline-item h2 {
   margin: 0;
+} */
+
+.subheading {
+  @apply text-sm text-gray-300;
 }
 
 .timeline-item .role {
-  font-size: 12px;
-  opacity: 0.7;
   margin-bottom: 0.5rem;
 }
 
 .post-icon {
   @apply w-4
+}
+
+.section-item {
+  @apply flex cursor-pointer flex-col space-y-4 rounded-lg border border-transparent p-6 transition-all duration-150 hover:border-pink-300;
 }

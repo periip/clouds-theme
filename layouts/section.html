@@ -1,5 +1,5 @@
 {{ define "main" }}
-<div class="mx-auto w-full max-w-4xl px-4 py-6">
+<div class="content-container py-6">
 	<h1 class="text-3xl font-bold mb-8">{{ .Title }}</h1>
 
 	{{ $tag := .Section }}
@@ -41,15 +41,15 @@
 					{{ if not $teaser }}{{ $teaser = $post.Summary }}{{ end }}
 
 					<a href="{{ $post.RelPermalink }}" class="block">
-						<article class="not-prose flex cursor-pointer flex-col space-y-4 rounded-lg border border-transparent p-6 transition-all duration-150 hover:border-pink-300">
+						<article class="not-prose section-item">
 							<h2 class="text-xl font-semibold">
 								<span class="text-white flex items-center">
 									<img src="{{ or $post.Params.listIcon "/post.png" }}" alt="" class="post-icon mr-2">
 									{{ $post.LinkTitle }}
 								</span>
 							</h2>
-							<ul class="pl-5">
-								<li><time class="text-sm text-gray-300">{{ $post.Date.Format "January 2, 2006" }}</time></li>
+							<ul>
+								<li><time class="subheading">{{ $post.Date.Format "January 2, 2006" }}</time></li>
 								{{ with $teaser }}<li><em>{{ . | plainify | truncate 140 }}</em></li>{{ end }}
 							</ul>
 						</article>
@@ -57,15 +57,15 @@
 				{{ else if eq .type "link" }}
 					{{ $link := .data }}
 					<a href="{{ $link.url }}" target="_blank" rel="noopener noreferrer" class="block">
-						<article class="not-prose flex cursor-pointer flex-col space-y-4 rounded-lg border border-transparent p-6 transition-all duration-150 hover:border-pink-300">
+						<article class="not-prose section-item">
 							<h2 class="text-xl font-semibold">
 								<span class="text-white flex items-center">
 									<img src="{{ or $link.icon "/link.png" }}" alt="" class="post-icon mr-2">
 									{{ $link.title }}
 								</span>
 							</h2>
-							<ul class="pl-5">
-								<li><time class="text-sm text-gray-300">{{ .date }}</time></li>
+							<ul>
+								<li><time class="subheading">{{ .date }}</time></li>
 								{{ with $link.teaser }}<li><em>{{ . | plainify | truncate 140 }}</em></li>{{ end }}
 							</ul>
 						</article>

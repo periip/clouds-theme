@@ -1,14 +1,14 @@
 {{ define "main" }}
-<div class="mx-auto w-full max-w-4xl px-4 py-6">
-  <h1>{{ .Title }}</h1>
-  <div class="timeline">
-    {{ range .Params.jobs }}
-    <div class="timeline-item">
-      <h3>{{ .company }}</h3>
-      <p class="role">{{ .role }} · {{ .duration }}</p>
-      <p>{{ .description }}</p>
-    </div>
-    {{ end }}
-  </div>
+<div class="content-container py-6">
+	<h1 class="text-3xl font-bold mb-8">{{ .Title }}</h1>
+	<div class="timeline grid gap-6 mt-8">
+		{{ range .Params.jobs }}
+			<div class="timeline-item p-6">
+				<h2 class="text-xl font-semibold">{{ .company }}</h2>
+				<p class="subheading role">{{ .role }} · {{ .duration }}</p>
+				<p>{{ .description }}</p>
+			</div>
+		{{ end }}
+	</div>
 </div>
 {{ end }}

@@ -9,7 +9,7 @@
 	<body>
 		<header>{{ partial "header.html" . }}</header>
 		{{ if .IsHome }}
-			<div class="mx-auto w-full max-w-4xl px-4 py-2 mt-8">
+			<div class="content-container py-2 mt-8">
 				{{ with .Params.title }}
 					<h1>{{ . }}</h1>
 				{{ end }} 
@@ -19,15 +19,15 @@
 			</div>
 		{{ end }}
 		<main>
-			<div class="mx-auto w-full max-w-4xl px-4 py-6">
+			<div class="content-container py-6">
 				{{ block "main" . }}{{ end }}
 			</div>
 		</main>
 		{{ if .IsHome }}
-			<div class="mx-auto w-full max-w-4xl px-4 py-2 mt-8">
+			<div class="content-container py-2 mt-8">
 				<h1>Recent Work</h1>
 			</div>
-			<div class="mx-auto w-full max-w-4xl px-4 py-4">
+			<div class="content-container py-4">
 				{{/* Get regular posts */}} 
 				{{ $candidates := where site.RegularPages "Type" "in" (slice "posts" "post" "blog") }}
 				{{ if lt (len $candidates) 2 }}
@@ -60,7 +60,7 @@
 						{{ if eq .type "post" }} {{ $post := .data }}
 							<a
 								href="{{ $post.RelPermalink }}"
-								class="card not-prose block relative cursor-pointer space-y-4 transition-all duration-150 group"
+								class="card not-prose card-transition"
 								aria-label="{{ $post.LinkTitle }}"
 							>
 								<h3 class="font-semibold flex items-center gap-2">
@@ -87,7 +87,7 @@
 								href="{{ $link.url }}"
 								target="_blank"
 								rel="noopener noreferrer"
-								class="card not-prose block relative cursor-pointer space-y-4 transition-all duration-150 group"
+								class="card not-prose card-transition"
 								aria-label="{{ $link.title }}"
 							>
 								<h3 class="font-semibold flex items-center gap-2">
