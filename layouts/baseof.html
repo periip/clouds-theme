@@ -60,7 +60,7 @@
 						{{ if eq .type "post" }} {{ $post := .data }}
 							<a
 								href="{{ $post.RelPermalink }}"
-								class="card not-prose card-transition group"
+								class="card not-prose group"
 								aria-label="{{ $post.LinkTitle }}"
 							>
 								<h3 class="font-semibold flex items-center gap-2">
@@ -87,7 +87,7 @@
 								href="{{ $link.url }}"
 								target="_blank"
 								rel="noopener noreferrer"
-								class="card not-prose card-transition group"
+								class="card not-prose group"
 								aria-label="{{ $link.title }}"
 							>
 								<h3 class="font-semibold flex items-center gap-2">
