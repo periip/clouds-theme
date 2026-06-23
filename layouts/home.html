@@ -1,5 +1,13 @@
 {{ define "main" }}
 {{ $p := .Params }}
+<div class="mb-8 mt-2">
+	{{ with .Params.title }}
+		<h1>{{ . }}</h1>
+	{{ end }} 
+	{{ with .Params.tagline }}
+		<h3>{{ . }}</h3>
+	{{ end }}
+</div>
 <div class="grid lg:grid-cols-2 gap-4">
 	<div class="flex flex-col space-y-4">
 		<img src="{{ or $p.portraitImage "/portrait.png" }}" alt="Portrait" class="rounded-full w-20 h-20">
@@ -59,6 +67,89 @@
 				</p>
 			{{ end }}
 		</div>
+	</div>
+</div>
+
+<div class="py-2 mt-8">
+	<h1>Recent Work</h1>
+</div>
+<div class="py-4">
+	{{/* Get regular posts */}} 
+	{{ $candidates := where site.RegularPages "Type" "in" (slice "posts" "post" "blog") }}
+	{{ if lt (len $candidates) 2 }}
+		{{ $candidates = site.RegularPages }} 
+	{{ end }}
+
+	{{/* Get external links from all section pages */}}
+	{{ $allItems := slice }} 
+	{{ range $candidates }}
+		{{ $allItems = $allItems | append (dict "type" "post" "data" . "sortDate" .Date) }} 
+	{{ end }} 
+
+	{{/* Collect external links from section pages */}} 
+	{{ range site.Sections }}
+		{{ $externalLinks := .Params.externalLinks }} 
+		{{ if $externalLinks }} 
+			{{ range $externalLinks }}
+				{{ $parsedDate := time .date }}
+				{{ $allItems = $allItems | append (dict "type" "link" "data" . "sortDate" $parsedDate) }} 
+			{{ end }} 
+		{{ end }} 
+	{{ end }}
+
+	{{/* Sort all items by date (newest first) and take first 2 */}}
+	{{ $allItems = sort $allItems "sortDate" "desc" }} 
+	{{ $recentItems := first 2 $allItems }}
+
+	<div class="grid lg:grid-cols-2 gap-4">
+		{{ range $recentItems }} 
+			{{ if eq .type "post" }} {{ $post := .data }}
+				<a
+					href="{{ $post.RelPermalink }}"
+					class="card not-prose group"
+					aria-label="{{ $post.LinkTitle }}"
+				>
+					<h3 class="font-semibold flex items-center gap-2">
+						<img src="/post.png" alt="post" class="post-icon" />
+						{{ $post.LinkTitle }}
+					</h3>
+
+					{{ with $post.Params.teaser }}
+						<p><em>{{ . }}</em></p>
+					{{ else }} 
+						{{ with $post.Params.description }}
+							<p><em>{{ . }}</em></p>
+						{{ else }}
+							<p><em>{{ $post.Summary }}</em></p>
+						{{ end }} 
+					{{ end }}
+
+					<span class="self-start text-sm text-white underline">
+						Read more →
+					</span>
+				</a>
+			{{ else if eq .type "link" }} {{ $link := .data }}
+				<a
+					href="{{ $link.url }}"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="card not-prose group"
+					aria-label="{{ $link.title }}"
+				>
+					<h3 class="font-semibold flex items-center gap-2">
+						{{ with $link.icon }}<img src="{{ . }}" alt="link" class="post-icon"/>{{ end }} {{ $link.title }}
+					</h3>
+
+					{{ with $link.teaser }}
+						<p><em>{{ . }}</em></p>
+					{{ end }}
+
+					<span class="self-start text-sm text-white underline">
+						Read more →
+					</span>
+				</a>
+			{{ end }} 
+		{{ end }}
 	</div>
 </div>
 {{ .Content }}
