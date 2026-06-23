@@ -40,8 +40,11 @@
 					{{ if not $teaser }}{{ $teaser = $post.Params.description }}{{ end }}
 					{{ if not $teaser }}{{ $teaser = $post.Summary }}{{ end }}
 
-					<a href="{{ $post.RelPermalink }}" class="block">
-						<article class="not-prose section-item">
+					<a 
+						href="{{ $post.RelPermalink }}" 
+						class="block not-prose section-item"
+					>
+						<article>
 							<h2 class="text-xl font-semibold">
 								<span class="text-white flex items-center">
 									<img src="{{ or $post.Params.listIcon "/post.png" }}" alt="" class="post-icon">
@@ -56,8 +59,13 @@
 					</a>
 				{{ else if eq .type "link" }}
 					{{ $link := .data }}
-					<a href="{{ $link.url }}" target="_blank" rel="noopener noreferrer" class="block">
-						<article class="not-prose section-item">
+					<a 
+						href="{{ $link.url }}" 
+						target="_blank" 
+						rel="noopener noreferrer" 
+						class="block not-prose section-item"
+					>
+						<article>
 							<h2 class="text-xl font-semibold">
 								<span class="text-white flex items-center">
 									<img src="{{ or $link.icon "/link.png" }}" alt="" class="post-icon">

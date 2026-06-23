@@ -6,7 +6,7 @@
   --bg: #111111;
   --text: #ffffff;
   --accent: #B892FF;
-  --overlay: rgba(0,0,0,0.2)
+  --overlay: rgba(0,0,0,0.1)
 }
 
 html {
@@ -29,6 +29,7 @@ body {
   max-width: none;
   font-size: 14px;
   min-height: 100vh;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2)
 }
 
 body::after {
@@ -168,11 +169,19 @@ hr {
   @apply mx-auto w-full max-w-4xl px-4;
 }
 
+.frosted {
+  background-color: rgba(0,0,0,0.2);
+  backdrop-filter: blur(4px);
+  border-radius: 0.5rem;
+}
+
 .toc-container {
   position: sticky;
   top: 2rem;
   max-height: calc(100vh - 4rem);
   overflow-y: auto;
+  display: flex;
+  flex-direction: column
 }
 
 @media (max-width: 768px) {
@@ -206,13 +215,10 @@ input[type="email"] {
 nav ul {
   list-style: none;
   padding-left: 0;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin: 0;
 }
 
-nav ul li {
+nav:not(#TableOfContents) ul li {
+  @apply pl-5;
   display: flex;
   align-items: center;
 }
@@ -222,6 +228,10 @@ nav {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+}
+
+nav ul li::before {
+  display: none;
 }
 
 ul {
@@ -251,19 +261,6 @@ ol {
 
 ol li {
   position: relative;
-}
-
-nav ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-nav ul li {
-  @apply pl-5;
-}
-
-nav ul li::before {
-  display: none;
 }
 
 nav a {
@@ -336,5 +333,5 @@ a.card:hover,
 }
 
 .section-item {
-  @apply flex cursor-pointer flex-col space-y-4 rounded-lg border border-transparent p-6 transition-all duration-150 hover:border-pink-300;
+  @apply flex cursor-pointer flex-col space-y-4 rounded-lg border-2 border-transparent p-6 transition-all duration-150 hover:border-pink-300;
 }
