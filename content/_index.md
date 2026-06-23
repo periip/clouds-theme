@@ -13,4 +13,8 @@ statusText = "A way to let everyone know what you're up to..."
 listeningImage = "/listening.png"
 listeningText = "Bruno Mars - Locked out of Heaven"
 listeningUrl = "https://www.youtube.com/watch?v=e-fA-gBCkj0"
+
+githubUrl = "https://github.com/"
+linkedinUrl = "https://linkedin.com"
+resume = "/resume.pdf"
 +++

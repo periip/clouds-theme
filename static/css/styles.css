@@ -24,6 +24,7 @@
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --radius-lg: 0.5rem;
+    --radius-2xl: 1rem;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
@@ -619,24 +620,6 @@ nav a:hover {
   padding: calc(var(--spacing) * 6);
   background-color: var(--overlay);
 }
-.card-transition {
-  position: relative;
-  display: block;
-  cursor: pointer;
-  :where(& > :not(:last-child)) {
-    --tw-space-y-reverse: 0;
-    margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse));
-    margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse)));
-  }
-  transition-property: all;
-  transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-  transition-duration: var(--tw-duration, var(--default-transition-duration));
-  --tw-duration: 150ms;
-  transition-duration: 150ms;
-}
-a.card:hover {
-  border-color: var(--accent);
-}
 .timeline {
   --timeline-padding: 1rem;
   border-left: 2px solid var(--text);
@@ -672,6 +655,16 @@ a.card:hover {
   width: calc(var(--spacing) * 8);
   align-self: flex-start;
 }
+.resume-button {
+  display: flex;
+  width: calc(var(--spacing) * 30);
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-2xl);
+  border-style: var(--tw-border-style);
+  border-width: 2px;
+  border-color: var(--color-white);
+}
 .favicon {
   width: calc(var(--spacing) * 12);
   border-radius: calc(infinity * 1px);
@@ -680,6 +673,9 @@ a.card:hover {
   border-color: var(--color-white);
   fill: currentcolor;
   padding: calc(var(--spacing) * 2);
+}
+a.card:hover, .favicon:hover, .resume-button:hover {
+  border-color: var(--accent);
 }
 .section-item {
   display: flex;

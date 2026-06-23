@@ -279,14 +279,6 @@ nav a:hover {
   background-color: var(--overlay);
 }
 
-.card-transition {
-  @apply block relative cursor-pointer space-y-4 transition-all duration-150
-}
-
-a.card:hover {
-  border-color: var(--accent)
-}
-
 .timeline {
   --timeline-padding: 1rem;
   border-left: 2px solid var(--text);
@@ -329,9 +321,18 @@ a.card:hover {
   @apply w-8 self-start
 }
 
+.resume-button {
+  @apply w-30 border-2 border-white rounded-2xl flex justify-center items-center
+}
+
 .favicon {
   @apply w-12 rounded-full border-2 border-white p-2 fill-current
+}
 
+a.card:hover,
+.favicon:hover,
+.resume-button:hover {
+  border-color: var(--accent)
 }
 
 .section-item {
