@@ -192,14 +192,14 @@
   .m-0 {
     margin: 0;
   }
-  .mt-2 {
-    margin-top: calc(var(--spacing) * 2);
-  }
   .mt-6 {
     margin-top: calc(var(--spacing) * 6);
   }
   .mt-8 {
     margin-top: calc(var(--spacing) * 8);
+  }
+  .mt-16 {
+    margin-top: calc(var(--spacing) * 16);
   }
   .mr-2 {
     margin-right: calc(var(--spacing) * 2);
@@ -225,14 +225,8 @@
   .grid {
     display: grid;
   }
-  .h-20 {
-    height: calc(var(--spacing) * 20);
-  }
   .w-8 {
     width: calc(var(--spacing) * 8);
-  }
-  .w-20 {
-    width: calc(var(--spacing) * 20);
   }
   .w-64 {
     width: calc(var(--spacing) * 64);
@@ -299,9 +293,6 @@
     text-overflow: ellipsis;
     white-space: nowrap;
   }
-  .rounded-full {
-    border-radius: calc(infinity * 1px);
-  }
   .rounded-lg {
     border-radius: var(--radius-lg);
   }
@@ -329,6 +320,9 @@
   }
   .py-6 {
     padding-block: calc(var(--spacing) * 6);
+  }
+  .pb-2 {
+    padding-bottom: calc(var(--spacing) * 2);
   }
   .text-3xl {
     font-size: var(--text-3xl);
@@ -474,8 +468,10 @@ blockquote {
   color: var(--text);
 }
 h1 {
-  font-size: 28px;
-  font-weight: bold;
+  font-size: var(--text-3xl);
+  line-height: var(--tw-leading, var(--text-3xl--line-height));
+  --tw-font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-bold);
   color: var(--text);
 }
 h2 {
@@ -520,14 +516,15 @@ hr {
   margin-top: 2rem;
   margin-bottom: 2rem;
   border: none;
-  border-top: 1px solid #333333;
+  border-top: 1px solid var(--text);
   background: none;
 }
 .content-container {
   margin-inline: auto;
   width: 100%;
   max-width: var(--container-4xl);
-  padding-inline: calc(var(--spacing) * 4);
+  padding-inline: calc(var(--spacing) * 8);
+  padding-block: calc(var(--spacing) * 12);
 }
 .frosted {
   background-color: rgba(0,0,0,0.2);
@@ -612,6 +609,11 @@ nav a {
 nav a:hover {
   color: #f9a8d4;
 }
+.portrait {
+  height: calc(var(--spacing) * 30);
+  width: calc(var(--spacing) * 30);
+  border-radius: calc(infinity * 1px);
+}
 .card {
   display: flex;
   flex-direction: column;
@@ -619,7 +621,6 @@ nav a:hover {
   border-style: var(--tw-border-style);
   border-width: 2px;
   padding: calc(var(--spacing) * 6);
-  background-color: var(--overlay);
 }
 .timeline {
   --timeline-padding: 1rem;

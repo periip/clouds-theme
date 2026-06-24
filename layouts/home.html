@@ -1,6 +1,6 @@
 {{ define "main" }}
 {{ $p := .Params }}
-<div class="mb-8 mt-2">
+<div class="mb-8">
 	{{ with .Params.title }}
 		<h1>{{ . }}</h1>
 	{{ end }} 
@@ -10,7 +10,7 @@
 </div>
 <div class="grid lg:grid-cols-2 gap-4">
 	<div class="flex flex-col space-y-4">
-		<img src="{{ or $p.portraitImage "/portrait.png" }}" alt="Portrait" class="rounded-full w-20 h-20">
+		<img src="{{ or $p.portraitImage "/portrait.png" }}" alt="Portrait" class="portrait">
 		<div>
 			{{ with $p.introTitle }}<strong>{{ . }}</strong>{{ end }}
 			{{ with $p.introBody }}{{ . | markdownify }}{{ end }}
@@ -69,8 +69,7 @@
 		</div>
 	</div>
 </div>
-
-<div class="py-2 mt-8">
+<div class="py-2 mt-16">
 	<h1>Recent Work</h1>
 </div>
 <div class="py-4">
@@ -152,5 +151,4 @@
 		{{ end }}
 	</div>
 </div>
-{{ .Content }}
 {{ end }}
