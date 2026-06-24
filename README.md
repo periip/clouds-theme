@@ -22,7 +22,8 @@ hugo server -D
 ```
 
 # Planned Features
-1. Clean up code and finish styling experience page 
-2. Add social media icons & resume to page
-3. Fetch songs from youtube/spotify playlist
-4. Update "listening" card to have a more fun/interactive UI
+~~1. Clean up code and finish styling experience page~~
+~~2. Add social media icons & resume to page~~
+3. Considering changing font of page
+4. Fetch songs from youtube/spotify playlist
+5. Update "listening" card to have a more fun/interactive UI
