@@ -9,7 +9,7 @@
 	<body>
 		<header>{{ partial "header.html" . }}</header>
 		<main>
-			<div class="content-container py-6 {{ if not .IsHome }}frosted{{ end }}">
+			<div class="content-container frosted">
 				{{ block "main" . }}{{ end }}
 			</div>
 		</main>
