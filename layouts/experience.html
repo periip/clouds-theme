@@ -6,7 +6,11 @@
 			<div class="timeline-item p-6">
 				<h2 class="text-xl font-semibold">{{ .company }}</h2>
 				<p class="subheading role">{{ .role }} · {{ .duration }}</p>
-				<p>{{ .description }}</p>
+				<ul>
+					{{ range .bullets }}
+						<li>{{ . }}</li>
+					{{ end }}
+				</ul>
 			</div>
 		{{ end }}
 	</div>
