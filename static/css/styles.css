@@ -676,7 +676,7 @@ nav a:hover {
   fill: currentcolor;
   padding: calc(var(--spacing) * 2);
 }
-a.card:hover, .favicon:hover, .resume-button:hover {
+a.card:hover, .favicon:hover, .resume-button:hover, .section-item:hover {
   border-color: var(--accent);
 }
 .section-item {
@@ -698,11 +698,6 @@ a.card:hover, .favicon:hover, .resume-button:hover {
   transition-duration: var(--tw-duration, var(--default-transition-duration));
   --tw-duration: 150ms;
   transition-duration: 150ms;
-  &:hover {
-    @media (hover: hover) {
-      border-color: var(--color-pink-300);
-    }
-  }
 }
 @property --tw-space-y-reverse {
   syntax: "*";

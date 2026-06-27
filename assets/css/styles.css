@@ -327,10 +327,11 @@ nav a:hover {
 
 a.card:hover,
 .favicon:hover,
-.resume-button:hover {
+.resume-button:hover,
+.section-item:hover {
   border-color: var(--accent)
 }
 
 .section-item {
-  @apply flex cursor-pointer flex-col space-y-4 rounded-lg border-2 border-transparent p-6 transition-all duration-150 hover:border-pink-300;
+  @apply flex cursor-pointer flex-col space-y-4 rounded-lg border-2 border-transparent p-6 transition-all duration-150;
 }
